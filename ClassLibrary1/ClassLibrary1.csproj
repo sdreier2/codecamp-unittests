@@ -45,6 +45,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Config\ConfigurationManager.cs" />
+    <Compile Include="Config\HttpClientWrapper.cs" />
+    <Compile Include="Delivery\DateTimeHelper.cs" />
+    <Compile Include="Delivery\DeliveryDateService.cs" />
+    <Compile Include="Orders\ExternalOrdersApi.cs" />
+    <Compile Include="Orders\OrderRequestData.cs" />
+    <Compile Include="Orders\OrderResponseData.cs" />
     <Compile Include="Weather\ExternalWeatherApi.cs" />
     <Compile Include="Math\FactorialCalculator.cs" />
     <Compile Include="Math\MathService.cs" />

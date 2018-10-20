@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace ClassLibrary1
 {
-    public class ExternalWeatherApi
+    public interface IExternalWeatherApi
+    {
+        Task<WeatherForecastData> GetForecast(int maxDays);
+        Task<WeatherForecastData> GetForecastAndUpdateLastRun(int maxDays);
+    }
+
+    public class ExternalWeatherApi : IExternalWeatherApi
     {
         private readonly IConfigurationManager _configurationManager;
         private readonly HttpClient _client;
@@ -32,7 +38,7 @@ namespace ClassLibrary1
             return data;
         }
 
-        public async Task<WeatherForecastData> GetForeCastAndUpdateLastRun(int maxDays)
+        public async Task<WeatherForecastData> GetForecastAndUpdateLastRun(int maxDays)
         {
             _configurationManager.UpdateAppSetting("LastRun", DateTime.Now.ToShortDateString());
             return await GetForecast(maxDays);

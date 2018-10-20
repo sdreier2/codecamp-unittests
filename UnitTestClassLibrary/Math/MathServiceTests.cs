@@ -95,7 +95,6 @@ namespace UnitTestClassLibrary
                     .Verify(f => f.CreateFactorialMessage(It.Is<int>(i => i == factorialParam), It.IsAny<string>()), Times.Once);
             }
         }
-
-        #endregion Test 5
+        #endregion Test5
     }
 }
